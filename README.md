@@ -16,7 +16,7 @@ The bot is meant to answer questions from **Pathway 1 and Pathway 2** only.
 ---
 
 ## Live URLs
-- **Frontend (deployed):** (paste your Netlify/Render URL here after deploying)
+- **Frontend (deployed):** `https://pathway-ai-tutor.netlify.app/`
 - **Worker API base URL:** `https://pathway-ai-tutor.johnnyjdavis1979.workers.dev`
 
 API endpoint used by the frontend:
