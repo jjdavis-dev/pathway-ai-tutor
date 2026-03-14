@@ -46,30 +46,36 @@ export default function App() {
   }
 
   return (
-    <div style={{ maxWidth: 700, margin: "40px auto", fontFamily: "Arial" }}>
-      <h2>Pathway 1 & 2 AI Tutor</h2>
-
-      <div style={{ border: "1px solid #ccc", padding: 15, minHeight: 300 }}>
-        {messages.map((msg, index) => (
-          <p key={index}>
-            <strong>{msg.role === "you" ? "You" : "Bot"}:</strong> {msg.text}
-          </p>
-        ))}
-      </div>
-
-      <div style={{ marginTop: 10, display: "flex", gap: 10 }}>
-        <input
-          style={{ flex: 1, padding: 10 }}
-          value={input}
-          onChange={(e) => setInput(e.target.value)}
-          placeholder="Type your question..."
-          onKeyDown={(e) => {
-            if (e.key === "Enter") sendMessage();
-          }}
-        />
-        <button onClick={sendMessage} style={{ padding: "10px 15px" }}>
-          Send
-        </button>
+    <div className="min-h-screen bg-slate-100 p-10">
+      <div className="mx-auto max-w-xl rounded-xl bg-white p-6 shadow">
+        <h2 className="mb-4 text-2xl font-bold">Pathway 1 & 2 AI Tutor</h2>
+  
+        <div className="min-h-[300px] border border-slate-300 p-4">
+          {messages.map((msg, index) => (
+            <p key={index}>
+              <strong>{msg.role === "you" ? "You" : "Bot"}:</strong> {msg.text}
+            </p>
+          ))}
+        </div>
+  
+        <div className="mt-3 flex gap-2">
+          <input
+            className="flex-1 rounded border border-slate-300 p-2"
+            value={input}
+            onChange={(e) => setInput(e.target.value)}
+            placeholder="Type your question..."
+            onKeyDown={(e) => {
+              if (e.key === "Enter") sendMessage();
+            }}
+          />
+  
+          <button
+            onClick={sendMessage}
+            className="rounded bg-blue-600 px-4 py-2 text-white"
+          >
+            Send
+          </button>
+        </div>
       </div>
     </div>
   );
